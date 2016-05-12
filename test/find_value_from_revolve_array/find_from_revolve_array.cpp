@@ -24,6 +24,7 @@ int find_revolve_array(const int arr[], int len, int value)
 	while (left <= right)
 	{
 		mid = (left - right) / 2 + right; // 不要用 left / 2 + right / 2   因为(5 + 7)/2 = 6  而 (5/2 + 7/2) = 5
+		// 9/2 + 9/2 = 8   遇不见最后一个数 可能死循环
 
 		if (arr[mid] == value)
 		{
