@@ -45,7 +45,42 @@ void FunTest()
     BigData right1(2);
     ret = left1 + right1;
     cout<<ret<<endl;
+
+    // 都无溢出 相加结果溢出
+    BigData left2(0-9223372036854775808);
+    cout<<left2<<endl;
+    BigData right2(-3);
+   ret = left2 + right2;
+    cout<<ret<<endl;
 }
+
+void FunTest1()
+{
+ /*   BigData left2(1234);
+    BigData right2(34);
+    cout<<left2-right2<<endl;*/
+
+    BigData left2(9223372036854775807);
+    BigData right2(-999);
+    cout<<left2-right2<<endl;
+}
+
+void FunTest2()
+{
+
+    // BigData left2("999");
+    //BigData right2("99999999999999999999999999999999");
+    //cout<<left2*right2<<endl;
+
+    /* BigData left2("1111111111111111111111111111111111");
+    BigData right2("-99");
+    cout<<left2*right2<<endl;*/
+
+     BigData left2("1000000000000000000000001");
+    BigData right2("-22222222222222222222222222222222222222222");
+    cout<<left2*right2<<endl;
+}
+
 
 
 
@@ -53,6 +88,8 @@ void FunTest()
 int main()
 {
 	//test_BigData_add();
-    FunTest();
+  // FunTest(); 
+
+    FunTest2();
 	return 0;
 }

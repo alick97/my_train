@@ -18,9 +18,12 @@ public:
   	BigData(const char *pData);
 
 	BigData operator+(const BigData& bigData);
+    BigData operator-(const BigData& bigData);
+    BigData operator*(const BigData& bigData);
 private:
 	std::string Add(std::string left, std::string right);
     std::string Sub(std::string left, std::string right);
+    std::string Mul(std::string left, std::string right);
 	bool IsINT64Overflow() const;
 	void INT64ToString();
 private:
