@@ -20,12 +20,16 @@ public:
 	BigData operator+(const BigData& bigData);
     BigData operator-(const BigData& bigData);
     BigData operator*(const BigData& bigData);
+    BigData operator/(const BigData& bigData);
 private:
 	std::string Add(std::string left, std::string right);
     std::string Sub(std::string left, std::string right);
     std::string Mul(std::string left, std::string right);
+    std::string Div(std::string left, std::string right);
 	bool IsINT64Overflow() const;
 	void INT64ToString();
+    bool IsLeftStrBig(char* pLeft, int LSize,const char* pRight, int RSize);
+    char SubLoop(char* pLeft, int LSize,const char* pRight, int RSize);
 private:
 	INT64 _value;
 	std::string _strData;

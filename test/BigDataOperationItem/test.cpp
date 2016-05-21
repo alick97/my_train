@@ -2,8 +2,17 @@
 #include "BigData.h"
 #include <iostream>
 using namespace std;
-void test_BigData_add()
+void test_BigData()
 {
+    // "1235464678"
+	// "+123456789"
+    // "+"
+    // "       "
+    // "000012312313"
+	// "-12131313123"
+	// "123123asdad1231213"
+	// "a4546546"
+	// "000000000"
     BigData b1(23456);
     BigData b2("12345678");
     BigData b3("+1234567");
@@ -18,23 +27,16 @@ void test_BigData_add()
 
     BigData b9 = "";
     BigData b10 = "0000000000";
+    BigData b11("+asasa"); // 0  
 
-    cout<<b1<<endl;
-    cout<<b2<<endl;
-    cout<<b3<<endl;
-    cout<<b4<<endl;
-    cout<<b5<<endl;
-    cout<<b6<<endl;
-    cout<<b7<<endl;
-    cout<<b8<<endl;
-    cout<<b9<<endl;
-    cout<<b10<<endl;
+    BigData b12(9223372036854775807);
+    BigData b13(0 - 9223372036854775808);
+    BigData b14(INT64(0));
+
 }
 
-void FunTest()
+void FunTest_ADD()
 {
-    int i = 0;
-    BigData zero(i);
     BigData left(1234);
     BigData right(4321);
     BigData ret = left + right;
@@ -54,18 +56,18 @@ void FunTest()
     cout<<ret<<endl;
 }
 
-void FunTest1()
+void FunTest_SUB()
 {
  /*   BigData left2(1234);
     BigData right2(34);
     cout<<left2-right2<<endl;*/
 
-    BigData left2(9223372036854775807);
-    BigData right2(-999);
+    BigData left2("11");
+    BigData right2("-78789997777777777777777777777777777");
     cout<<left2-right2<<endl;
 }
 
-void FunTest2()
+void FunTest_MUL()
 {
 
     // BigData left2("999");
@@ -87,9 +89,10 @@ void FunTest2()
 
 int main()
 {
-	//test_BigData_add();
-  // FunTest(); 
+	//test_BigData();
+  //FunTest_ADD();
+  FunTest_SUB();
 
-    FunTest2();
+   // FunTest2();
 	return 0;
 }
