@@ -373,22 +373,36 @@ namespace Second
 
             _CheckCapacity();  
 
-            size_t hashKeyStart = _HashFunc(key);
-            size_t add_more = 1;
-            size_t index = hashKeyStart;
-            // ****************************************
-            // 二次探测    Hash(key) + 0 Hash(key) + 1^2 Hash(key) + 2^2
+            //size_t hashKeyStart = _HashFunc(key);
+            //size_t add_more = 1;
+            //size_t index = hashKeyStart;
+            //// ****************************************
+            //// 二次探测    Hash(key) + 0 Hash(key) + 1^2 Hash(key) + 2^2
 
+            //while (EXIST == _states[index])
+            //{
+            //    index = hashKeyStart + add_more * add_more;
+            //    add_more++;
+            //    if (index >= _capacity)
+            //    {
+            //          index = index % _capacity;
+            //    }  
+            //}
+
+             // ****************************************
+
+            // 改进 用GetNextIndex 解决哈希冲突
+            size_t index = _HashFunc(key);
+            // 二次探测   
+            size_t i = 1;
             while (EXIST == _states[index])
             {
-                index = hashKeyStart + add_more * add_more;
-                add_more++;
+                index = _GetNextIndex(index, i++);
                 if (index >= _capacity)
                 {
                       index = index % _capacity;
                 }  
             }
-
             _tables[index]._key = key;
             _tables[index]._value = value;
             _states[index] = EXIST;
@@ -400,6 +414,7 @@ namespace Second
         {
             size_t index = _HashFunc(key);
             size_t start = index;
+            size_t i = 1;
             // 存在 或者 被删除 两种状态
             while (EMPTY != _states[index])
             {
@@ -415,17 +430,14 @@ namespace Second
                     }
                 }
 
-                index++;
+                index = _GetNextIndex(index, i++);
 
-                if (index == _capacity)
+                if (index >= _capacity)
                 {
-                    index = 0;
+                    index = index % _capacity;
                 }
-                // 找一圈 没找到就停止 防止死循环
-                if (index == start)
-                {
-                    return -1;
-                }
+
+                // 因为有填充因子 不为100%  不会出现全满且key！=_key 导致死循环的情况
             }
 
             return -1;
@@ -445,7 +457,7 @@ namespace Second
         }
 
         
-        // 线性探测计算出存放位置（假设不哈希冲突）
+       // 二次探测计算出存放位置
         size_t _HashFunc(const K& key)
         {
            // __HashFunc<K> hf;
@@ -454,6 +466,17 @@ namespace Second
             // 匿名对象
             // return __HashFunc<K>()(key) % _capacity;
         }
+
+        //   哈希冲突时 得到下一个index的可以利用上一个index的值 这样能提高效率 比如 string的index计算就比较费时
+          size_t _GetNextIndex(size_t prev, size_t i) 
+         {
+             //二次探测
+             // 公式推导 Hash(i) = Hash(0) + i^2
+             //          Hash(i-1) = Hash(0) + (i -1)^2=Hash(0)+i^2-2i+1
+             //  上面两式相减 得 Hash(i) = Hash(i-1) + +2*i - 1;
+             return prev + 2*i - 1;
+         }
+
 
         void Print()
         {
@@ -501,6 +524,7 @@ namespace Second
                 Swap(tmp);
             }
         }
+
     protected:
         Node* _tables;     //  哈希表
         State* _states; //  状态表
@@ -525,6 +549,9 @@ void test_namespace_Second()
     ht.Print();
 
      int ret = ht.Find("two");
+    cout<<ret<<endl;
+
+    ret = ht.Find("hfjks");
     cout<<ret<<endl;
 
     ht.Remove("one");
