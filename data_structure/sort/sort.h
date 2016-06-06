@@ -40,4 +40,24 @@ int Partition(int* arr, int begin, int end);
 void QuickSort(int* arr, int size);
 void _QuickSort(int* arr, int begin, int end);
 void test_QuickSort();
+// 快排优化
+void QuickSort_OP(int* arr, int size);
+void test_QuickSort_OP();
+
+
+// 快排 【非递归】 利用stack
+void _QuickSort_NRe(int* arr, int left, int right);
+void test_QuickSort_NRe();
+// 归并排序
+void MergeSort(int* arr, int n);
+void test_MergeSort();
+// 计数排序
+// 1  如 知道范围 0-99  用哈希直接定址法
+// 2 如范围100000-200000    则减去100000 进行下标映射
+void CountSort(int* arr, int size);
+void test_CountSort();
+
+// 基数排序 有矩阵快速转置的影子
+void RadixSort(int* arr, int size);
+void test_RadixSort();
 
