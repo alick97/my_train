@@ -1,9 +1,9 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#pragma once
 
-
-// 插入排序
-void InsertSort(int* arr, int size);
+// 直接插入排序
+void InsertSort(int*arr, int size);
 void test_InsertSort();
+
 
 //2 希尔排序
 // 2 5 4 9 3 6 8 7 1 0
@@ -14,20 +14,18 @@ void test_InsertSort();
 void ShellSort(int* arr, int length);
 void test_ShellSort();
 
+
 //3 选择排序
 
 void SelectSort(int* arr, int size);
 void test_SelectSort();
-
-// 选择排序同时排最大和最小
-void SelectSort_min_max(int* arr, int size);
-void test_SelectSort_min_max();
 
 //4 堆排序
 // 向下调整
 void _AdjustDown(int* arr, int parent, int size) ;
 void HeapSort(int* arr, int size);
 void test_HeapSort();
+
 
 // 5 冒泡排序
 void BubbleSort(int* arr, int size);
@@ -43,6 +41,15 @@ void test_QuickSort();
 // 快排优化
 void QuickSort_OP(int* arr, int size);
 void test_QuickSort_OP();
+
+// 快排优化
+void QuickSort_OP(int* arr, int size);
+void test_QuickSort_OP();
+
+int Partition_OP(int* arr, int begin, int end);
+// 快排 【非递归】 利用stack
+void _QuickSort_NRe(int* arr, int left, int right);
+void test_QuickSort_NRe();
 
 
 // 快排 【非递归】 利用stack
@@ -60,4 +67,5 @@ void test_CountSort();
 // 基数排序 有矩阵快速转置的影子
 void RadixSort(int* arr, int size);
 void test_RadixSort();
+
 

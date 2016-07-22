@@ -1,21 +1,15 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#include "sort.h"
 #include <iostream>
 #include <assert.h>
 using namespace std;
 
-#include"sort.h"
-/**********
- * 常见比较排序算法
- * 选择排序、堆排序、冒泡排序、选择排序、快速排序、归并排序
- * 
- *****************/
-
-//1  直接插入排序
-void InsertSort(int* arr, int size)
+// 直接插入排序
+void InsertSort(int*arr, int size)
 {
-    assert(NULL != arr && size > 0);
+    assert(arr && size > 0);
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0 ; i < size; i++)
     {
         int tmp = arr[i];
         int end = i - 1;
@@ -27,13 +21,15 @@ void InsertSort(int* arr, int size)
         }
 
         arr[end + 1] = tmp;
+
     }
+
 }
 
 void test_InsertSort()
 {
-    int arr[10] = {2,5,4,9,3,6,8,7,1,0};
-    InsertSort(arr, 10);
+     int arr[10] = {2,5,4,9,3,6,8,7,1,0};
+     InsertSort(arr, 10);
 }
 
 
@@ -45,14 +41,14 @@ void test_InsertSort()
 
 void ShellSort(int* arr, int length)
 {
-    assert(arr && length > 0);
-    //int gap = 3;
+    assert(arr && length);
+
     int gap = length;
     while (gap > 1)
     {
-        gap = gap /3 + 1; // gap = 1 相当于最后一次用了直接插入排序
+        gap = gap /3 + 1;
 
-        for (int i = 0; i < length - gap; i++) // 注意i++ 不是i+=gap
+        for (int i = 0; i < length - gap; i++)
         {
             int end = i;
             int tmp = arr[i + gap];
@@ -62,9 +58,13 @@ void ShellSort(int* arr, int length)
                 arr[end + gap] = arr[end];
                 end -= gap;
             }
+
             arr[end + gap] = tmp;
+
         }
+
     }
+
 }
 
 void test_ShellSort()
@@ -73,16 +73,17 @@ void test_ShellSort()
     ShellSort(arr, 10);
 }
 
+
+
 //3 选择排序
 
 void SelectSort(int* arr, int size)
 {
-    assert(NULL != arr && size > 0);
+    assert(arr && size > 0);
 
     for (int i = 0; i < size; i++)
     {
         int min = i;
-
         for (int j = i + 1; j < size; j++)
         {
             if (arr[j] < arr[min])
@@ -92,7 +93,9 @@ void SelectSort(int* arr, int size)
         }
 
         swap(arr[i], arr[min]);
+
     }
+
 }
 
 void test_SelectSort()
@@ -101,117 +104,7 @@ void test_SelectSort()
     SelectSort(arr, 10);
 }
 
-// 选择排序同时排最大和最小【记录下标交换有坑】
-//void SelectSort_min_max(int* arr, int size)
-//{
-//    assert(NULL != arr && size > 0);
-//    int left = 0;
-//    int right = size - 1;
-//
-//    while (left < right)
-//    {
-//        int min = left;
-//        int max = left;
-//        for (int i = left; i <= right; i++)
-//        {
-//            if (arr[i] < arr[min])
-//            {
-//                min = i;
-//            }
-//
-//            if (arr[i] > arr[max])
-//            {
-//                max = i;
-//            }
-//        }
-//            swap(arr[left], arr[min]); // 有问题 【坑】如 最小的在最右边 or 最大值在最左边 9 5 2 4 3 1 交换时 先是【1】 5 2 4 3 9 然后 【9】 5 2 4 3 1
-//            swap(arr[right],arr[max]);
-//            // 解决方法 1 直接值交换 而不是 交换索引
-//            // 解决方法 2 交换时判断一下
-//            right--;
-//            left++;
-//        
-//    }
-//}
 
- // 解决方法 1 直接值交换 而不是 交换索引
-//void SelectSort_min_max(int* arr, int size)
-//{
-//    assert(NULL != arr && size > 0);
-//    int left = 0;
-//    int right = size - 1;
-//
-//    while (left < right)
-//    {
-//        //int min = arr[left];
-//        //int max = arr[left];
-//        for (int i = left; i <= right; i++)
-//        {
-//            if (arr[i] < arr[left])
-//            {
-//               // min = i;
-//                 // 解决方法 1 直接值交换 而不是 交换索引
-//                swap(arr[i], arr[left]);
-//            }
-//
-//            if (arr[i] > arr[right])
-//            {
-//               // max = i;
-//                swap(arr[i], arr[right]);
-//            }
-//        }
-//           
-//            right--;
-//            left++;
-//        
-//    }
-//}
-
-   // 解决方法 2 交换时判断一下
-void SelectSort_min_max(int* arr, int size)
-{
-    assert(NULL != arr && size > 0);
-    int left = 0;
-    int right = size - 1;
-
-    while (left < right)
-    {
-        int min = left;
-        int max = left;
-        for (int i = left; i <= right; i++)
-        {
-            if (arr[i] < arr[min])
-            {
-                min = i;
-            }
-
-            if (arr[i] > arr[max])
-            {
-                max = i;
-            }
-        }
-        swap(arr[left], arr[min]);
-
-        // 解决方法二 判断一下 手动处理 最大值在最左边 或 最小值在最右边的请况
-        if (max == left)
-        {
-            max = min;
-        }
-
-        swap(arr[right],arr[max]);
-         
-        right--;
-        left++;
-        
-    }
-}
-
-void test_SelectSort_min_max()
-{
-    // int arr[10] = {0,1,2,3,4,5,6,7,8,9}; //ok
-     int arr[10] = {9,5,2,4,3,4,7,8,6,1}; // error
-    SelectSort_min_max(arr, 10);
-}
 
 //4 堆排序
 // 向下调整
@@ -230,21 +123,22 @@ void _AdjustDown(int* arr, int parent, int size)
         {
             swap(arr[child], arr[parent]);
             parent = child;
-            child = parent * 2 + 1;
+            child = parent* 2 + 1;
         }
         else
         {
             break;
         }
     }
+
 }
 
 void HeapSort(int* arr, int size)
 {
-    assert(NULL != arr && size > 0);
+    assert(arr && size > 0);
 
     // 建大堆
-    for (int i = (size - 2) / 2 - 1; i >= 0; i--)
+    for (int i = (size - 1 -1)/2; i >= 0; i--)
     {
         _AdjustDown(arr, i, size);
     }
@@ -258,20 +152,21 @@ void HeapSort(int* arr, int size)
 
 void test_HeapSort()
 {
-    int arr[10] = {2,5,4,9,3,6,8,7,1,0};
-    HeapSort(arr, 10);
+     int arr[10] = {2,5,4,9,3,6,8,7,1,0};
+     HeapSort(arr, 10);
 }
+
 
 
 // 5 冒泡排序
 void BubbleSort(int* arr, int size)
 {
-    assert(NULL != arr && size > 0);
+    assert(arr && size > 0);
 
     for (int i = 0; i < size; i++)
-    { 
-        bool isOrder = true; // 已经有序
-        for (int j = 0; j < size - i -1; j++)
+    {
+        bool isOrder = true;
+        for (int j = 0; j < size - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -289,16 +184,17 @@ void BubbleSort(int* arr, int size)
 
 void test_BubbleSort()
 {
-    int arr[10] = {2,5,4,9,3,6,8,7,1,0};
-    BubbleSort(arr, 10);
+        int arr[10] = {2,5,4,9,3,6,8,7,1,0};
+         BubbleSort(arr, 10);
 }
+
+
 
 // 快速排序
 // [begin , end] 一次划分
 int Partition(int* arr, int begin, int end)
 {
-    assert(NULL != arr);
-
+    assert(arr);
     int tmp = end;
     int left = begin;
     int right = end - 1;
@@ -325,6 +221,7 @@ int Partition(int* arr, int begin, int end)
     }
 
     return tmp;
+
 }
 
 // 方法二 挖坑法
@@ -336,10 +233,11 @@ int Partition_2(int* arr, int begin, int end)
 
     while (begin < end)
     {
-        while (begin < end && key >= arr[begin])
+        while (begin < end && arr[begin] <= key)
         {
             begin++;
         }
+
         arr[end] = arr[begin];
 
         while (begin < end && arr[end] >= key)
@@ -349,55 +247,58 @@ int Partition_2(int* arr, int begin, int end)
 
         arr[begin] = arr[end];
     }
-    // 5 6
+
     arr[end] = key;
     return end;
 }
 
-// 方法二 prev、cur法
+// 方法三 prev、cur法
 // 与前两种不同 不利用right做索引 同时也适合【链表排序】
 // [begin end]
 int Partition_3(int* arr, int begin, int end)
 {
     assert(arr);
     int cur = begin;
-    int prev = cur - 1;
+    int prev= cur -1;
     int key = arr[end]; // 【待用三数取中法优化】
 
     while (cur < end)
     {
-        if (arr[cur] < key && ++prev != cur) // prev 在大数第一个
+        if (arr[cur] < key && ++prev != cur)
         {
-            swap(arr[prev],arr[cur]);
+            swap(arr[cur], arr[prev]);
         }
-
         ++cur;
     }
 
     swap(arr[++prev], arr[end]);
+
     return prev;
 }
 
 
-void _QuickSort(int* arr, int begin, int end)
+void _QuickSort(int * arr, int begin, int end)
 {
     assert(arr);
 
     if (begin < end)
     {
         //int index = Partition(arr, begin, end);
-       //  int index = Partition_2(arr, begin, end); // 挖坑法
-        int index = Partition_3(arr, begin, end); //  prev、cur法
-        _QuickSort(arr, begin, index - 1);
-        _QuickSort(arr, index + 1, end);
+       // int index = Partition_2(arr, begin, end); // 挖坑法
+        // int index = Partition_3(arr, begin, end); //  prev、cur法
+         int index = Partition_OP(arr, begin, end);
+        _QuickSort(arr, begin, index -1);
+        _QuickSort(arr, index+ 1, end);
     }
+
 }
+
 
 void QuickSort(int* arr, int size)
 {
-    assert(NULL != arr && size > 0);
+    assert(arr && size > 0);
 
-    _QuickSort(arr, 0, size - 1);
+    _QuickSort(arr, 0 , size - 1);
 }
 
 void test_QuickSort()
@@ -415,11 +316,11 @@ void test_QuickSort()
 int GetMid(int* arr,int left, int mid, int right)
 {
     assert(arr);
-    if (arr[left] < arr[mid])  // left < mid
+    if (arr[left] < arr[mid])
     {
         if (arr[right] < arr[left])
         {
-            return right;
+            return left;
         }
         else if (arr[right] > arr[mid])
         {
@@ -430,7 +331,7 @@ int GetMid(int* arr,int left, int mid, int right)
             return right;
         }
     }
-    else  //  mid < left
+    else // mid < left
     {
         if (arr[right] < arr[mid])
         {
@@ -447,30 +348,30 @@ int GetMid(int* arr,int left, int mid, int right)
     }
 }
 
-
 int Partition_OP(int* arr, int begin, int end)
 {
     assert(arr);
     int cur = begin;
-    int prev = cur - 1;
-    // 【优化1 三数取中法】
-    int mid = GetMid(arr, begin, begin +(begin - end)/2, end);
-    int key = arr[mid]; // 
-    ///////////////////////////////////////////////////////
+    int prev = cur -1;
+
+    // 优化 1 三数取中法
+    int mid = GetMid(arr, begin, begin + (end - begin)/ 2, end);
+    int key = arr[mid];
+    swap(arr[mid], arr[end]);
     while (cur < end)
     {
-        if (arr[cur] < key && ++prev != cur) // prev 在大数第一个
+        if (arr[cur] < key && ++prev != cur)
         {
-            swap(arr[prev],arr[cur]);
+            swap(arr[cur], arr[prev]);
         }
 
         ++cur;
+
     }
 
     swap(arr[++prev], arr[end]);
     return prev;
 }
-
 
 void _QuickSort_OP(int* arr, int begin, int end)
 {
@@ -543,30 +444,36 @@ void _QuickSort_NRe(int* arr, int left, int right)
     {
         int end = s.top();
         s.pop();
+
         int start = s.top();
         s.pop();
 
         int div = Partition(arr, start, end);
 
-        if (start < div - 1) // 至少两个数
+        if (start < div -1)
         {
             s.push(start);
             s.push(div - 1);
         }
-
+        
         if (div + 1 < end)
         {
             s.push(div + 1);
             s.push(end);
         }
+
+
     }
+
 }
+
 
 void test_QuickSort_NRe()
 {
     int arr[10] = {2,5,4,9,3,6,8,7,1,0};
     _QuickSort_NRe(arr,0, 10 - 1);
 }
+
 // 归并排序
 // 63    95  |  84    46 |  18   24 |  27  31 |  46
 // 63    95  |  46    84 |  18   24 |  27  31 |  46
@@ -580,8 +487,8 @@ void Merge(int* arr, int* tmp, int left,int mid, int right) // 合并
 {
     assert(arr && tmp);
     int i = left;
-    int index = mid + 1; // 第二组
-    int begin = left; // 第一组
+    int index = mid + 1;// 第二组
+    int begin = left;// 第一组
 
     while (begin <= mid && index <= right)
     {
@@ -595,7 +502,8 @@ void Merge(int* arr, int* tmp, int left,int mid, int right) // 合并
         }
     }
 
-    // 可能剩下一组的部分 下面两个while只执行一个
+    //可能剩下一组的部分 下面两个while只执行一个
+
     while (begin <= mid)
     {
         tmp[i++] = arr[begin++];
@@ -606,14 +514,12 @@ void Merge(int* arr, int* tmp, int left,int mid, int right) // 合并
         tmp[i++] = arr[index++];
     }
 
-    // 排好后 赋值给arr
-    for (int j = left; j <= right; j++)
+
+    for (int j = 0; j <= right; j++)
     {
         arr[j] = tmp[j];
     }
-
 }
-
 
 void _mergeSort(int* arr,int* tmp, int left, int right)
 {
@@ -629,7 +535,6 @@ void _mergeSort(int* arr,int* tmp, int left, int right)
     }
 }
 
-
 void MergeSort(int* arr, int n)
 {
     assert(NULL != arr && n > 0);
@@ -638,7 +543,6 @@ void MergeSort(int* arr, int n)
 
     delete[] tmp;
 }
-
 
 void test_MergeSort()
 {
@@ -674,23 +578,23 @@ void CountSort(int* arr, int size)
 
 void test_CountSort()
 {
-    int arr[10] = {2,5,4,9,3,6,8,7,1,0};
+    int arr[10] = {2,5,4,9,6,6,8,7,1,0};
     CountSort(arr, 10);
 }
 
 // 基数排序
-int Maxbit(int* a, int size) // 计算数组中最大值的位数
+// 计算数组中最大值的位数
+int Maxbit(int* a, int size)
 {
     int bit = 1;
     int num = 10;
 
     for (int i = 0; i < size; i++)
     {
-        // 100 3
-        if (a[i] >= num)
+        while (a[i] >= num)
         {
             bit++;
-            num *= 10;
+            num*=10;
         }
     }
 
@@ -702,9 +606,9 @@ void RadixSort(int* arr, int size)
 {
     int maxbit = Maxbit(arr, size);
     int* tmp = new int[size];
-    int* start = new int[10]; //  起始位置
-    int* count = new int[10]; // 次数 记录0-9 数字的次数
-    int radix = 1; // 哪一位 1  10   100   1000
+    int* start = new int[10]; // 起始位置
+    int* count = new int[10];// 次数 记录0-9数字的次数
+    int radix = 1; // 哪一位 1 10 100 1000
     for (int bit = 0; bit < maxbit; bit++)
     {
         for (int j = 0; j < 10; j++)
@@ -712,11 +616,12 @@ void RadixSort(int* arr, int size)
             count[j] = 0;
         }
 
-        for (int j = 0; j < size; j++)
+        for (int j = 0; j < size ; j++)
         {
-            int k = (arr[j]/radix) % 10; // 对应位置上的数字
+            int k = (arr[j]/radix) %10; // 对应位置上的数字
             count[k]++;
         }
+
         // 计算start
         start[0] = 0;
         for (int i = 1; i < 10; i++)
@@ -724,14 +629,14 @@ void RadixSort(int* arr, int size)
             start[i] = start[i - 1] + count[i - 1];
         }
 
-        // 一趟排序 
-        for (int i =0; i < size; i++)
+        // 一趟排序
+        for (int i = 0; i < size; i++)
         {
-            int k = (arr[i]/radix) % 10;
+            int k = (arr[i]/radix)%10;
             tmp[start[k]++] = arr[i];
         }
 
-        // tmp 写回 arr
+        // tmp 写回arr
         for (int i = 0; i < size; i++)
         {
             arr[i] = tmp[i];
@@ -739,10 +644,11 @@ void RadixSort(int* arr, int size)
 
         radix = radix * 10;
     }
-    
+
     delete[] tmp;
     delete[] start;
     delete[] count;
+
 }
 
 void test_RadixSort()
