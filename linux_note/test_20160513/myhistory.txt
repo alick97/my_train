@@ -1,0 +1,1000 @@
+  203  gcc -o GTclear GTclear.c 
+  204  vim ./GTclear.c
+  205  gcc -o GTclear GTclear.c 
+  206  vim ./GTclear.c
+  207  gcc -o GTclear GTclear.c 
+  208  ./GTclear
+  209  vim ./GTclear.c
+  210  gcc -o GTclear GTclear.c 
+  211  ./GTclear
+  212  vim ./GTclear.c
+  213  gcc -o GTclear GTclear.c 
+  214  ./GTclear
+  215  gcc -o GTclear GTclear.c 
+  216  ./GTclear
+  217  vim ./GTclear.c
+  218  ./GTclear
+  219  vim ./GTclear.c
+  220  gcc -o GTclear GTclear.c 
+  221  ./GTclear
+  222  ll
+  223  ls -a
+  224  cd ..
+  225  ll
+  226  cd dir20160322/
+  227  ll
+  228  cd bo/
+  229  ll
+  230  vim test.c 
+  231  ls
+  232  cd /etc/
+  233  ll
+  234  vim vimrc 
+  235  sudo vim vimrc 
+  236  su
+  237  ll
+  238  cd ~
+  239  ll
+  240  cd bo/
+  241  ll
+  242  vim test2.c 
+  243  root
+  244  su
+  245  ll
+  246  vim test2.c 
+  247  !
+  248  su
+  249  exit
+  250  cd /
+  251  ll
+  252  cd usr/
+  253  ll
+  254  cd share/
+  255  ll
+  256  cd vim
+  257  ll
+  258  cd vim72/
+  259  ll
+  260  cd colors/
+  261  ll
+  262  cd /
+  263  ll
+  264  cd mnt/
+  265  ll
+  266  cd hgfs/
+  267  ll
+  268  cd vmwear_source/
+  269  ll
+  270  cd offer_test/
+  271  ll
+  272  mkdir test3_shuzuchazhao
+  273  cd test3_shuzuchazhao/
+  274  vim main.cpp
+  275  g++ -o main main.cpp 
+  276  vim main.cpp
+  277  g++ -o main main.cpp 
+  278  vim main.cpp
+  279  g++ -o main main.cpp 
+  280  vim main.cpp
+  281  g++ -o main main.cpp 
+  282  vim main.cpp
+  283  g++ -o main main.cpp 
+  284  ll
+  285  ./main
+  286  vim main.cpp
+  287  g++ -o main main.cpp 
+  288  ./main
+  289  vim main.cpp
+  290  g++ -o main main.cpp 
+  291  ./main
+  292  vim main.cpp
+  293  history 
+  294  cd usr/;ll
+  295  cd /user
+  296  cd ~
+  297  cd /usr/
+  298  ll
+  299  cd /
+  300  ll
+  301  cd m
+  302  cd mnt/
+  303  ll
+  304  cd hgfs/
+  305  ll
+  306  cd vmwear_source/
+  307  ll
+  308  cd offer_test/
+  309  ll
+  310  cd ../
+  311  ll
+  312  cd code
+  313  ll
+  314  cd test/
+  315  ll
+  316  vim feibenaqie.cpp
+  317  g++ -o test feibenaqie.cpp 
+  318  ./test 
+  319  vim feibenaqie.cpp
+  320  g++ -o test feibenaqie.cpp 
+  321  ./test 
+  322  vim feibenaqie.cpp
+  323  g++ -o test feibenaqie.cpp 
+  324  ./test 
+  325  gdb
+  326  ls
+  327  cd huishouzhan/
+  328  ll
+  329  vim ddd.c 
+  330  g++ -g ddd.c -o ddd
+  331  vim ddd.c 
+  332  g++ -g ddd.c -o ddd
+  333  gdb ddd
+  334  su
+  335  ll
+  336  cd ./
+  337  ll
+  338  cd ../
+  339  ll
+  340  cd ../
+  341  ll
+  342  cd my_code_o/
+  343  ll
+  344  cp myrm /mnt/hgfs/vmwear_source/code/test/
+  345  cp myrm /mnt/hgfs/vmwear_source/code/test/test_array/
+  346  ll
+  347  cd ~
+  348  ll
+  349  cd huishouzhan/
+  350  ll
+  351  vim feibenaqie.cpp 
+  352  exit
+  353  ls
+  354  cd /
+  355  ls
+  356  cd tmp/
+  357  ll
+  358  cd ../
+  359  cd `
+  360  ls
+  361  c`
+  362  ll
+  363  pwd
+  364  cd ~
+  365  ll
+  366  cd -
+  367  cd /
+  368  ls
+  369  cd m
+  370  cd mnt/
+  371  ll
+  372  cd hgfs/
+  373  ll
+  374  cd vmwear_source/
+  375  ll
+  376  cd code/
+  377  ll
+  378  cd test/
+  379  ll
+  380  mkdir test_array
+  381  cd test_array/
+  382  vim test_array.cpp
+  383  g++ test_array.cpp 
+  384  vim test_array.cpp
+  385  g++ test_array.cpp 
+  386  ll
+  387  ./a
+  388  ./a.out 
+  389  vim test_array.cpp
+  390  g++ -p  test_array.cpp 
+  391  gbc
+  392  gdb
+  393  gdb ./a.out 
+  394  g++ -g  test_array.cpp 
+  395  ll
+  396  rm -i a.out 
+  397  ll
+  398  gdb gmon.out 
+  399  g++ -g test_array.cpp  -o test
+  400  vim test_array.cpp
+  401  g++ -g test_array.cpp  -o test
+  402  ll
+  403  ./test
+  404  ll
+  405  g
+  406  gdb ./test
+  407  clear
+  408  gdb
+  409  gdb ./test
+  410  l
+  411  r
+  412  gdb
+  413  pwd
+  414  a = pwd
+  415  ls
+  416  ll
+  417  cp test test_array
+  418  ll
+  419  ./myrm test_array
+  420  cd ../;ll
+  421  ./myrm test
+  422  ll
+  423  ./myrm feibenaqie.cpp 
+  424  ll
+  425  ping localhost
+  426  man ping
+  427  ping sust.edu.cn
+  428  man ping
+  429  ping -b sust.edu.cn
+  430  ping baidu.com
+  431  man ping
+  432  ping baidu.com
+  433  ping www.baidu.com
+  434  su
+  435  ping -c 3 127.0.0.1
+  436  p localhost
+  437  ping  localhost
+  438  ping -c 5 google.com
+  439  ping -c 5 sust.edu.com 
+  440  ping -c 5 www.sust.edu.com 
+  441  ifconfig 
+  442  sync
+  443  shutdown -h 5
+  444  su 
+  445  sync
+  446  shutdown -h now
+  447  su
+  448  su 
+  449  su
+  450  ls
+  451  cd c
+  452  ls
+  453  cd code/
+  454  ls
+  455  ls -l /dir*26
+  456  ls -l /*
+  457  ll
+  458  clear
+  459  ls
+  460  type ls
+  461  alias 
+  462  man alias
+  463  type ls
+  464  type -t ls
+  465  type -t man
+  466  name=bozi
+  467  echo $bozi
+  468  echo $name
+  469  name="$name"book
+  470  echo $name
+  471  exit
+  472  echo $name'
+  473  :q
+  474  q
+  475  '
+  476  echo name
+  477  echo $name
+  478  exit 
+  479  echo $name
+  480  name=2
+  481  echo $name
+  482  name="$name"book
+  483  echo $name
+  484  unset name
+  485  echo $name
+  486  name=boiz
+  487  bash
+  488  echo $name
+  489  unset name
+  490  echo $name
+  491  uname 
+  492  uname -r
+  493  env
+  494  mail
+  495  man mail
+  496  echo $number
+  497  echo $RANDOM 
+  498  set
+  499  clear
+  500  set
+  501  exit
+  502  su
+  503  shutdown -h now
+  504  su
+  505  ll
+  506  cd ll
+  507  cd ll
+  508  ll
+  509  cd /
+  510  cd mnt/hgfs/vmwear_source/
+  511  ll
+  512  cd code/
+  513  ll
+  514  cd 20160416/
+  515  ll
+  516  vim Triple.cpp 
+  517  g++ Triple.cpp 
+  518  clear
+  519  g++ Triple.cpp 
+  520  vim Triple.cpp 
+  521  g++ Triple.cpp 
+  522  vim Triple.cpp 
+  523  ll
+  524  cd /mnt/hgfs/vmwear_source/code/20160416/
+  525  ll
+  526  vim Triple.cpp 
+  527  g++ Triple.cpp 
+  528  vim Triple.cpp 
+  529  g++ Triple.cpp 
+  530  vim Triple.cpp 
+  531  g++ Triple.cpp 
+  532  vim Triple.cpp 
+  533  g++ Triple.cpp 
+  534  vim Triple.cpp 
+  535  g++ Triple.cpp 
+  536  vim Triple.cpp 
+  537  g++ Triple.cpp 
+  538  vim Triple.cpp 
+  539  g++ Triple.cpp 
+  540  ./a.out 
+  541  vim Triple.cpp 
+  542  g++ Triple.cpp 
+  543  ./a.out 
+  544  vim Triple.cpp 
+  545  g++ Triple.cpp 
+  546  ./a.out 
+  547  vim Triple.cpp 
+  548  g++ Triple.cpp 
+  549  ./a.out 
+  550  vim Triple.cpp 
+  551  g++ Triple.cpp 
+  552  vim Triple.cpp 
+  553  ./a.out 
+  554  exit
+  555  ll
+  556  cd /
+  557  ll
+  558  cd mnt/hgfs/
+  559  ll
+  560  cd vmwear_source/
+  561  ll
+  562  cd code/
+  563  ll
+  564  cd my_code
+  565  ll
+  566  cd../
+  567  cd ../
+  568  ll
+  569  cd my_code_o/
+  570  ll
+  571  cp myrm ../
+  572  cd ../
+  573  ll
+  574  mrm
+  575  mrm=$(ls)
+  576  mrm
+  577  $mrm
+  578  mrm=ls
+  579  $(mrm)
+  580  $($mrm)
+  581  unset mrm
+  582  ll
+  583  mkdir 20160416
+  584  ll
+  585  cd 20160416/
+  586  ll
+  587  vim Triple.cpp
+  588  ls
+  589  cp Triple.cpp Triple_backup.cpp 
+  590  ll
+  591  g++ Triple.cpp 
+  592  ll
+  593  g++ Triple.cpp 
+  594  vim Triple.cpp 
+  595  vim Triple.cpp 
+  596  g++ Triple.cpp 
+  597  vim Triple.cpp 
+  598  g++ Triple.cpp 
+  599  vim Triple.cpp 
+  600  g++ Triple.cpp 
+  601  ll
+  602  cp Triple.cpp Triple_backup.cpp 
+  603  ./a.out 
+  604  vim Triple.cpp 
+  605  g++ Triple.cpp 
+  606  ./a.out 
+  607  cp Triple.cpp Triple_backup.cpp 
+  608  ./a.out 
+  609  vim Triple.cpp 
+  610  g++ Triple.cpp 
+  611  vim Triple.cpp 
+  612  g++ Triple.cpp 
+  613  ./a.out 
+  614  vim Triple.cpp 
+  615  g++ Triple.cpp 
+  616  ./a.out 
+  617  vim Triple.cpp 
+  618  g++ Triple.cpp 
+  619  ./a.out 
+  620  su
+  621  pwd
+  622  echo $PATH
+  623  echo $HOME
+  624  cd /home/
+  625  ll
+  626  pwd
+  627  echo $HOME 
+  628  echo $HISTSIZE
+  629  echo $LOGNAME
+  630  echo $HOSTNAME
+  631  echo $SHELL
+  632  echo $LANG
+  633  echo $PS1
+  634  echo $PS2
+  635  SU
+  636  su
+  637  su 
+  638  env
+  639  su
+  640  echo '
+  641  ll
+  642  '
+  643  '
+  644  ;
+  645  '
+  646  clear
+  647  ls -al
+  648  cd bozi
+  649  ls -al
+  650  cd /dev/
+  651  ll
+  652  ls sdal
+  653  ll
+  654  clear
+  655  cd ~
+  656  ls
+  657  cd c
+  658  ll
+  659  cd code
+  660  ll
+  661  cd dir20160226/
+  662  ll
+  663  cd ~
+  664  clear
+  665  SU
+  666  su
+  667  ls
+  668  cd c
+  669  ls
+  670  cd code/
+  671  ls
+  672  cd /
+  673  ls
+  674  ls -al
+  675  ls
+  676  cd /
+  677  ls
+  678  ls-al
+  679  ls -al
+  680  su
+  681  exit
+  682  ifconfig 
+  683  ls
+  684  cd /home/bozi/
+  685  ll
+  686  cd linux_test/
+  687  ll
+  688  cd test_20160506/
+  689  ll
+  690  mkdir test_chmod_dir
+  691  ll
+  692  chmod 740 test_chmod_dir/
+  693  ll
+  694  vi test_chmod_dir/
+  695  chmod u-x test_chmod_dir/
+  696  ll
+  697  cd test_chmod_dir
+  698  chmod u+x test_chmod_dir/
+  699  ll
+  700  cd test_chmod_dir/
+  701  ll
+  702  cd ../
+  703  ls
+  704  ls -a
+  705  ls -b
+  706  ls -c
+  707  ls -cl
+  708  ls -d
+  709  ls -f
+  710  ls -U
+  711  ls -il
+  712  ls -kl
+  713  ls -m
+  714  ls -n
+  715  ls -o
+  716  ls -F
+  717  ls -Fl
+  718  ls -rl
+  719  ls -sl
+  720  ls -tl
+  721  ls -x
+  722  ls -Al
+  723  ll 
+  724  ls
+  725  ls -al
+  726  ls -L
+  727  ls -La
+  728  ls -Q
+  729  ls -Rl
+  730  cd ../
+  731  ls -Ral
+  732  cd /
+  733  ls -Ral
+  734  cd -
+  735  ls
+  736  cd test_20160506/
+  737  ll
+  738  ls -X
+  739  ls -l
+  740  cd ../
+  741  ll
+  742  cd ll
+  743  ll
+  744  cd test_20160506/
+  745  ll
+  746  date
+  747  date + %Y__%m__%d
+  748  date +%Y__%m__%d
+  749  date
+  750  date -M
+  751  date +%M
+  752  date +%n
+  753  date +%t%Y
+  754  date +%t%HM
+  755  date +%t%H%M
+  756  date +%t%H%M%p
+  757  date +%t%H%M%p%s
+  758  date +%T
+  759  date +%X
+  760  date +%a
+  761  date +%Z
+  762  date +%A
+  763  date +%b
+  764  date +%bB
+  765  date +%B
+  766  date +%c
+  767  date +%d
+  768  date +%D
+  769  date +%h
+  770  date +%m
+  771  date +%w
+  772  date +%W
+  773  date +%y
+  774  date +%Y
+  775  date +%m
+  776  date +%mY 
+  777  date +%mY
+  778  date +%Y
+  779  date +%Y --date="+1 year"
+  780  cal
+  781  cal -3
+  782  cal -s
+  783  cal -m
+  784  cal -j
+  785  cal -y
+  786  cal -my 2014
+  787  cal -my 2016
+  788  ll
+  789  cd test_chmod_dir
+  790  ll
+  791  mkdir test_chmod_dir
+  792  ll
+  793  mkdir -m 777 test_chmod_dir
+  794  mkdir -p  -m 777 test_chmod_dir
+  795  ll
+  796  cd test_chmod_dir/
+  797  ll
+  798  cd ../
+  799  ;ll
+  800  ll
+  801  cd ../
+  802  ll
+  803  mkdir -v
+  804  mkdir --version
+  805  ls 
+  806  ls -al
+  807  ls -al;nl -n
+  808  ls -al;nl --n
+  809  ls -al|nl --n
+  810  ls -al|nl -b t
+  811  ls -al;nl -b t
+  812  ll
+  813  nl -n ln test_chmod.txt 
+  814  more -c test_chmod.txt 
+  815  more -50
+  816  more +/qin test_chmod.txt 
+  817  ls
+  818  cd /home/bozi/c/
+  819  ll
+  820  cd code
+  821  ll
+  822  cd dir20160211
+  823  ll
+  824  more -s hello.c
+  825  more -s main.c 
+  826  more -s main.c | nl -n ln
+  827  more -s main.c 
+  828  more -s =  main.c 
+  829  more -s main.c 
+  830  more +/hello main.c 
+  831  more +/return  main.c 
+  832  ls -l / | more
+  833  less main.c 
+  834  less -m main.c 
+  835  ls -l | head -n 2
+  836  ls
+  837  ls -l | head -n 3
+  838  ls -l | head -nv 3
+  839  ls -l | tail -nv 3
+  840  ls -l | tail -v 
+  841  file
+  842  file -v
+  843  which
+  844  which --all | head -n 10 |nl -n ln
+  845  which --all -a | head -n 10 |nl -n ln
+  846  which -v | head -n 10 |nl -n ln
+  847  whereis -b grep
+  848  whereis -b gdb
+  849  whereis -b gcc
+  850  whereis -b g++
+  851  find -user bozi
+  852  find -user root
+  853  find -type f
+  854  find -type b
+  855  find -type d
+  856  find -type l
+  857  ls
+  858  cp -l  ce1 /home/bozi/link.lk 
+  859  cp -l  hello.c  /home/bozi/link.lk 
+  860  ls /home/bozi/
+  861  rm -i /home/bozi/link.lk 
+  862  ls /home/bozi/
+  863  ls
+  864  find -name hello
+  865  find -name hello.*
+  866  ls /etc/fstab 
+  867  ls /etc/fstab/
+  868  ls /etc/fstab
+  869  less /etc/fstab 
+  870  find /root -size -10c
+  871  find /home -size -10c
+  872  find /home -size -10c | head -n 10
+  873  find /home -size -10c -mtime +5 | head -n 10
+  874  locate -ul -n 5 -v
+  875  locate -u -n 5 -v
+  876  locate -U -n 5 -v
+  877  locate --U -n 5 -v
+  878  locate -n 5 -v
+  879  locate -n 5 test.cpp
+  880  locate -n 5 test.*
+  881  locate -n 5 tes*
+  882  su
+  883  sync
+  884  sudu shutdown -h now
+  885  sudo shutdown -h now
+  886  su
+  887  ls
+  888  cd /
+  889  ls
+  890  cd m
+  891  CD MN
+  892  cd mnt/
+  893  ls
+  894  cd h
+  895  cd hgfs/
+  896  ls
+  897  cd vmwear_source/
+  898  ls
+  899  cd code
+  900  ls
+  901  echo $path
+  902  echo $PATH
+  903  clear
+  904  ifconfig 
+  905  clear
+  906  echo $HOME
+  907  echo $LOGNAME 
+  908  echo $HOSTNAME 
+  909  echo $SHELL
+  910  echo $LANG
+  911  echo $MAIL
+  912  echo $PS1
+  913  su
+  914  echo $PS2
+  915  echo $PATH
+  916  evn
+  917  env
+  918  set
+  919  export HELLO="hello"
+  920  echo $PATH
+  921  SET
+  922  set
+  923  env
+  924  echo $HELLO
+  925  unset HELLO
+  926  env
+  927  ls -al
+  928  cd my_code
+  929  ll
+  930  cd ../
+  931  ls
+  932  cd ll
+  933  ll
+  934  cd /
+  935  cd /dev
+  936  ll
+  937  cd ../
+  938  ls
+  939  cd opt;ll
+  940  cd ../
+  941  ll
+  942  cd net/
+  943  ll
+  944  cd ../
+  945  ll
+  946  /bin/echo 
+  947  ll
+  948  cd ~
+  949  ll
+  950  mkdir linux_test
+  951  ll
+  952  cd linux_test/
+  953  ll
+  954  mkdir test_20160507
+  955  ll
+  956  rm test_20160507/
+  957  rm -r  test_20160507/
+  958  ll
+  959  mkdir test_20160506
+  960  cd test_20160506/
+  961  ll
+  962  vim test_chmod.txt
+  963  ll
+  964  chmod u+x test_chmod.txt 
+  965  ll
+  966  chmod u-w test_chmod.txt 
+  967  ll
+  968  chmod u-x test_chmod.txt 
+  969  ll
+  970  chmod g-w test_chmod.txt 
+  971  ll
+  972  vim test_chmod.txt 
+  973  ll
+  974  vim test_chmod.txt 
+  975  ll
+  976  chmod o-r test_chmod.txt 
+  977  ll
+  978  chmod 600 test_chmod.txt 
+  979  ll
+  980  chmod a+wrx test_chmod.txt 
+  981  ll
+  982  chmod a-x test_chmod.txt 
+  983  ll
+  984  cp test_chmod.txt test_chmod_back.txt 
+  985  ll
+  986  chown root test_chmod_back.txt 
+  987  ll
+  988  chgrp root test_chmod_back.txt 
+  989  ls
+  990  ll
+  991  umask 
+  992  umask 0022
+  993  umask 
+  994  umask 0002
+  995  ll
+  996  umask 
+  997  ifconfig
+  998  clc
+  999  clear
+ 1000  echo $shell
+ 1001  echo $SHELL
+ 1002  echo $PATH
+ 1003  pwd
+ 1004  ll
+ 1005  cd linux_test/
+ 1006  ll
+ 1007  mkdir test_20160513
+ 1008  ll
+ 1009  cd test_20160513/
+ 1010  touch pri
+ 1011  ll
+ 1012  chmod u+x pri 
+ 1013  ll
+ 1014  chmod u-r pri 
+ 1015  ll
+ 1016  chmod g+x
+ 1017  chmod g+x pri 
+ 1018  ll
+ 1019  chmod o-r pri
+ 1020  ll
+ 1021  chmod u-r pri
+ 1022  ll
+ 1023  chmod u-rw pri
+ 1024  ll
+ 1025  chmod u+rw o+rw pri
+ 1026  chmod u+rwo+rw pri
+ 1027* chmod o pri
+ 1028  ll
+ 1029  chmod u-rwx pri
+ 1030  ll
+ 1031  chmod g-rwx pri
+ 1032  ll
+ 1033  chmod u+rwx pri
+ 1034  ll
+ 1035  chmod 034 pri
+ 1036  ll
+ 1037  chmod 777 pri
+ 1038  ll
+ 1039  touch reference.txt
+ 1040  ll
+ 1041  chmod 000 reference.txt 
+ 1042  ll
+ 1043  chmod -reference=reference.txt  pri
+ 1044  chmod -reference =reference.txt  pri
+ 1045  chmod --reference =reference.txt  pri
+ 1046  chmod --reference=reference.txt  pri
+ 1047  ls
+ 1048  ll
+ 1049  chmod 777 pri
+ 1050  ll
+ 1051  chmod reference.txt 444
+ 1052  chmod 444 reference.txt
+ 1053  ll
+ 1054  chown guest pri
+ 1055  su
+ 1056  ll
+ 1057  chgrp root pri
+ 1058  su
+ 1059  sudo chgrp bozi pri
+ 1060  ll
+ 1061  sudo chgrp bozi pri
+ 1062  chmod 770 pri
+ 1063  touch 1
+ 1064  ll
+ 1065  su
+ 1066  ll
+ 1067  umask
+ 1068  umask 0032
+ 1069  umask 
+ 1070  touch 3
+ 1071  ll
+ 1072  umask
+ 1073  umask 0002
+ 1074  umask
+ 1075  touch 4
+ 1076  ll
+ 1077  ls -a
+ 1078  touch .file
+ 1079  ll
+ 1080  ll -a
+ 1081  ls -i
+ 1082  ls -ai
+ 1083  mkdir dir1
+ 1084  ls -l
+ 1085  ll
+ 1086  ls -r
+ 1087  cd dir1
+ 1088  ll
+ 1089  ped
+ 1090  pwd
+ 1091  cd -
+ 1092  pwwd
+ 1093  pwd
+ 1094  cd /
+ 1095  cd -
+ 1096  pwd
+ 1097  cd ~
+ 1098  pwd
+ 1099  cd -
+ 1100  pwd
+ 1101  cd ../
+ 1102  pwd
+ 1103  cd ../
+ 1104  pwd
+ 1105  cd ../
+ 1106  pwd
+ 1107  cd ../
+ 1108  pwd
+ 1109  cd ../
+ 1110  pwd
+ 1111  cd ~
+ 1112  pwd
+ 1113  cd -
+ 1114  pwd
+ 1115  cd /home/
+ 1116  pwd
+ 1117  cd -
+ 1118  pwd
+ 1119  cd ../
+ 1120  ls
+ 1121  pwd
+ 1122  cd /home
+ 1123  cd .../
+ 1124  cd ../
+ 1125  pwd
+ 1126  cd ./
+ 1127  pwd
+ 1128  cd home
+ 1129  cd ../
+ 1130  cd /home
+ 1131  ls
+ 1132  cd ~
+ 1133  clear
+ 1134  data
+ 1135  date
+ 1136  clear
+ 1137  date
+ 1138  date +%Y%m%d --date="-1 day"
+ 1139  date +%h%i%s --date="-1 day"
+ 1140  date +%H%M%S --date="-1 hour"
+ 1141  date %Y_%m_%d  %H%M%S
+ 1142  date %Y_%m_%d%H%M%S
+ 1143  date %Y_%m_%d_%H%M%S
+ 1144  date +%Y_%m_%d_ %H%M%S
+ 1145  date +%Y_%m_%d_%H%M%S
+ 1146  date +%Y_%m_%d------%H%M%S
+ 1147  date +%Y_%m_%d------%H:%M:%S
+ 1148  date %a
+ 1149  date +%a
+ 1150  date +%z
+ 1151  date +%Z
+ 1152  date +%s
+ 1153  date+%s
+ 1154  date +%s
+ 1155  date+%s
+ 1156  date +%s
+ 1157  date +%Y%m%d_%H%I%S -d @1463141397
+ 1158  cal
+ 1159  cal 2016
+ 1160  cal 1997
+ 1161  cal -m 2012
+ 1162  cal
+ 1163  ll
+ 1164  cd ~
+ 1165  ll
+ 1166  cd linux_test/
+ 1167  ll
+ 1168  cd test_20160513/
+ 1169  ll
+ 1170  mkdir test1/test2/test3
+ 1171  mkdir -p test1/test2/test3
+ 1172  ls
+ 1173  ll
+ 1174  mkdir test2
+ 1175  ll
+ 1176  rmdir test1
+ 1177  rmdir test2
+ 1178  mkdir -v test2/test3
+ 1179  ll
+ 1180  rm 3
+ 1181  mkdir test2
+ 1182  rm test2
+ 1183  ll
+ 1184  rm -i test2
+ 1185  rm -i 1
+ 1186  ls
+ 1187  ll
+ 1188  rm -ri test1
+ 1189  ls
+ 1190  ll
+ 1191  rm -fi test2
+ 1192  rm -fri test2
+ 1193  ll
+ 1194  rm -r test1
+ 1195  ls
+ 1196  mkdir -p test1/test2/test3/test4
+ 1197  ls
+ 1198  ll
+ 1199  ifconfig 
+ 1200  clear
+ 1201  history
+ 1202  history > myhistory.txt
