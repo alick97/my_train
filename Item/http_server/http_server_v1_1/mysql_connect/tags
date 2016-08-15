@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+INCLUDE	Makefile	/^INCLUDE=-I$(ROOT_PATH)\/..\/lib\/include$/;"	m
+LIB	Makefile	/^LIB=-lmysqlclient$/;"	m
+LIB_PATH	Makefile	/^LIB_PATH=-L$(ROOT_PATH)\/..\/lib\/lib$/;"	m
+ROOT_PATH	Makefile	/^ROOT_PATH=$(shell pwd)$/;"	m
+conn	sql_api.h	/^		MYSQL *conn;$/;"	m	class:sql_api
+db	sql_api.h	/^		std::string db;$/;"	m	class:sql_api
+host	sql_api.h	/^		std::string host;$/;"	m	class:sql_api
+main	cgi_insert.cpp	/^int main()$/;"	f
+main	cgi_select.cpp	/^int main()$/;"	f
+my_connect_mysql	sql_api.cpp	/^int sql_api::my_connect_mysql()$/;"	f	class:sql_api
+my_insert	sql_api.cpp	/^	int sql_api::my_insert(const std::string &cols, const std::string &data,const  std::string& table)$/;"	f	class:sql_api
+my_select	sql_api.cpp	/^	int sql_api::my_select(const std::string & table)$/;"	f	class:sql_api
+myinsert	cgi_insert.cpp	/^void myinsert(char *arg)$/;"	f
+myselect	cgi_select.cpp	/^void myselect()$/;"	f
+passwd	sql_api.h	/^		std::string passwd;$/;"	m	class:sql_api
+port	sql_api.h	/^		int port;$/;"	m	class:sql_api
+res	sql_api.h	/^		MYSQL_RES *res;$/;"	m	class:sql_api
+sql_api	sql_api.cpp	/^sql_api::sql_api(const std::string &_host, const std::string &_user, const std::string &_passwd, const std::string &_db)$/;"	f	class:sql_api
+sql_api	sql_api.h	/^class sql_api$/;"	c
+user	sql_api.h	/^		std::string user;$/;"	m	class:sql_api
+~sql_api	sql_api.cpp	/^	sql_api::~sql_api()$/;"	f	class:sql_api
