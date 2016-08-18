@@ -148,7 +148,7 @@ void get_peach()
 	int sum = 1;
 	while (i++ < 10)
 	{
-		sum = (sum + 1)<<2;
+		sum = (sum + 1)<<1;
 	}
 	printf("peach num %d\n", sum);
 }
