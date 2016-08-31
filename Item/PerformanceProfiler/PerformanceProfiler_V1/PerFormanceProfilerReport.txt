@@ -1,0 +1,12 @@
+No.1, Desc: 网络
+Filename: e:\lsh\bit 作业 课件\作业\性能剖析器(项目)\performanceprofiler\performanceprofiler.h, Line: 282, Function: TestPP2
+CostTime:0.20, CallCount:1
+
+No.2, Desc: 中间逻辑
+Filename: e:\lsh\bit 作业 课件\作业\性能剖析器(项目)\performanceprofiler\performanceprofiler.h, Line: 288, Function: TestPP2
+CostTime:0.30, CallCount:1
+
+No.3, Desc: 数据库
+Filename: e:\lsh\bit 作业 课件\作业\性能剖析器(项目)\performanceprofiler\performanceprofiler.h, Line: 293, Function: TestPP2
+CostTime:0.40, CallCount:1
+
