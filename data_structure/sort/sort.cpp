@@ -201,12 +201,12 @@ int Partition(int* arr, int begin, int end)
 
     while (left < right)
     {
-        while (left < right && arr[left] < arr[tmp])
+        while (left < right && arr[left] <= arr[tmp])  //       用<=  >=  不用<   >   防止left  0  right 0   tmp  0的情况死循环
         {
             left++;
         }
 
-        while (left < right && arr[right] > arr[tmp])
+        while (left < right && arr[right] >= arr[tmp])
         {
             right--;
         }
