@@ -780,3 +780,52 @@ void test_is_balance()
     cout<<"is_balance:"<<is_balance(pa.p1)<<endl;
 }
 
+/*
+   8
+    
+    给出二叉树接口为
+
+        class node
+        {
+            node *get_left();
+            node *get_right();
+            int get_data();
+        }
+        找出值为val的最浅节点所在层数。
+        1
+        int find(node *root, int val).
+
+
+*/
+
+//层序遍历
+ /* http://www.nowcoder.com/questionTerminal/578d5c28037c472bbcbc53057b80b6a7 */
+int find(TreeNode root, int val){
+        int deep = 0;
+        if(root == null)
+            return -1;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        boolean found = false;
+        while(!queue.isEmpty()){
+            Queue<TreeNode> cur = new LinkedList<TreeNode>();
+            while(!queue.isEmpty()){
+                TreeNode temp = queue.poll();
+                if(temp.val == val){
+                    found = true;
+                    break;
+                }
+                if(temp.left != null)
+                    cur.add(temp.left);
+                if(temp.right != null)
+                    cur.add(temp.right);
+            }//while
+            deep++;
+            while(!cur.isEmpty()){
+                queue.add(cur.poll());
+            }//while
+        }//while
+        if(!found)
+            return -1;
+        return deep;
+    }
