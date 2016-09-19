@@ -97,3 +97,73 @@ int main()
 
     return 0;
 }
+
+
+
+
+/*
+          人人 2016 C++
+有一排台阶，每个台阶上有一个非负整数，代表在该台阶上时能最多向前跳几个台阶。从第0个台阶开始跳，实现一个函数，判断是否能到达最后一个台阶。
+例如： 4 2 2 1 0 2 返回 false
+            2 1 3 1 1 0 返回 true
+1
+2
+3
+bool jump(int array[], int size)
+{                 
+}
+
+
+*/
+
+//    从后向前 用到标志位 
+#include <iostream>
+using namespace std;
+#include <vector>
+
+
+bool jump(int array[], int size)
+{       bool can = false;           
+    vector<bool> is(size, false);
+    is[size - 1] = true;
+    for (int i = size - 2; i >= 0; i--)
+    {
+        for (int j =1; j <= array[i]; j++)
+        {
+            if (i + j <= size - 1)
+            {
+                if (is[i + j] == true)
+                {
+                    is[i] = true;
+                    break;
+                }
+            }
+
+        }
+
+        if (i == 0 && is[i] == true)
+        {
+            can = true;
+        }
+
+    }
+
+    return can;
+}
+
+void test_jump()
+{
+    int arr1[6] = {4 ,2, 2 ,1, 0, 2};
+    int arr2[6] = {2 ,1 ,3 ,1 ,1 ,0};
+    cout<<jump(arr1,6)<<endl;
+    cout<<jump(arr2,6)<<endl;
+}
+
+
+
+int main()
+{
+    test_jump();
+    return 0;
+}
+
