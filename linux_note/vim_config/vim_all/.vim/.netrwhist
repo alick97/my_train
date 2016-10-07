@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/bozi/linux_test/test_20160603'
+let g:netrw_dirhist_2='/home/bozi/linux_test/test_20160606'
+let g:netrw_dirhist_3='/home/bozi/linux_test/test_20160520/dir_gdb'
+let g:netrw_dirhist_4='/home/bozi/linux_test/test_vim'
+let g:netrw_dirhist_5='/home/bozi/linux_test/test_20160726'
+let g:netrw_dirhist_6='/home/bozi/linux_test/test_20160727/thread'
+let g:netrw_dirhist_7='/home/bozi/linux_test/shell/4_shell'
