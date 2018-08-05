@@ -34,3 +34,6 @@
 *.vcxproj
 *.filters
 Debug
+
+#vscode
+.vscode
