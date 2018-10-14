@@ -50,7 +50,7 @@ void test_longest_palindrome() {
     string s1 = "babad";
     string p1 = s.longestPalindrome(s1);
     cout << "result: " << p1 << "  ";
-    if (s1.compare("bab") == 0) {
+    if (p1.compare("bab") != 0) {
         cout << "failed: s1's palindrome not equal 'bab'" << endl;
     } else {
         cout << "ok" << endl;
@@ -59,7 +59,7 @@ void test_longest_palindrome() {
     string s2 = "cbbd";
     string p2 = s.longestPalindrome(s2);
     cout << "result: " << p2 << "  ";
-    if (s2.compare("bb") == 0) {
+    if (p2.compare("bb") != 0) {
         cout << "failed: s2's palindrome not equal 'bb'" << endl;
     } else {
         cout << "ok" << endl;
