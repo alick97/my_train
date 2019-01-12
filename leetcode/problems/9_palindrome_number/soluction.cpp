@@ -5,25 +5,17 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x < 0) {
+        if(x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
 
-        std::string s = "";
-        while (x > 0) {
-            s += char('0' + (x % 10));
+        int reverted_number = 0;
+        while(x > reverted_number) {
+            reverted_number = reverted_number * 10 + x % 10;
             x /= 10;
         }
 
-        for(int i=0; i < s.size() / 2; i++) {
-             if (s[i] == s[s.size() - 1 -i]) {
-                 continue;
-             } else {
-                 return false;
-             }
-        }
-
-        return true;
+        return reverted_number == x || reverted_number/10 == x;
     }
 };
 
