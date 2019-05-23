@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <map>
 using namespace std;
 
 /*
@@ -17,62 +18,23 @@ class Solution {
 public:
     int romanToInt(string s) {
         int result = 0; // 1-3999
-        int i = 0;
-        int current_total = 0;
-        while (i < s.length()) {
-            if ('M' == s[i]) {
-                result += 1000;
-            } else if ('D' == s[i]) {
-                result += 500;
-            } else if ('L' == s[i]) {
-                result += 50;
-            } else if ('V' == s[i]) {
-                result += 5;
-            } else if ('C' == s[i]) {
-                if (i < s.length() - 1) {
-                    if ('D' == s[i + 1] || 'M' == s[i + 1]) {
-                        result -= current_total + 100;
-                        current_total = 0;
-                    } else if (s[i] != s[i + 1]) {
-                        result += current_total + 100;
-                        current_total = 0;
-                    } else {
-                        current_total += 100;
-                    }
-                } else {
-                    result += current_total + 100;
-                }
-            } else if ('X' == s[i]) {
-                if (i < s.length() - 1) {
-                    if ('L' == s[i + 1] || 'C' == s[i + 1]) {
-                        result -= current_total + 10;
-                        current_total = 0;
-                    } else if (s[i] != s[i + 1]) {
-                        result += current_total + 10;
-                        current_total = 0;
-                    } else {
-                        current_total += 10;
-                    }
-                } else {
-                    result += current_total + 10;
-                }
-            } else if ('I' == s[i]) {
-                if (i < s.length() - 1) {
-                    if ('V' == s[i + 1] || 'X' == s[i + 1]) {
-                        result -= current_total + 1;
-                        current_total = 0;
-                    } else if (s[i] != s[i + 1]) {
-                        result += current_total + 1;
-                        current_total = 0;
-                    } else {
-                        current_total += 1;
-                    }
-                } else {
-                    result += current_total + 1;
-                }
+        int pre = 0;
+        map<char, int> symbol_map;
+        symbol_map['I'] = 1;
+        symbol_map['V'] = 5;
+        symbol_map['X'] = 10;
+        symbol_map['L'] = 50;
+        symbol_map['C'] = 100;
+        symbol_map['D'] = 500;
+        symbol_map['M'] = 1000;
 
+        for (int i = s.length() - 1; i >= 0; --i) {
+            if (symbol_map[s[i]] < pre) {
+                result -= symbol_map[s[i]];
+            } else {
+                result += symbol_map[s[i]];
             }
-            ++i;
+            pre = symbol_map[s[i]];
         }
         return result;
     }
