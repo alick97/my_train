@@ -19,33 +19,18 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        if (n < 1 || head == NULL) {
-            return NULL;
+        ListNode **p1 = &head, *p2 = head;
+        while (n > 0) {
+            p2 = p2->next;
+            n--;
         }
-        ListNode* tmp_p = head;
-        int len = 1;
-        while (tmp_p->next != NULL) {
-            len++;
-            tmp_p = tmp_p->next;
+        while (p2 != NULL) {
+            p2 = p2->next;
+            p1 = &(*p1)->next;
         }
-        int count = len - n;
-        if (count == 0) {
-            tmp_p = head->next;
-            delete head;
-            return tmp_p;
-        }
-
-        tmp_p = head;
-        ListNode* pre = head;
-        while (count > 0) {
-            pre = tmp_p;
-            tmp_p = tmp_p->next;
-            count--;
-        }
-
-        tmp_p = pre->next->next;
-        delete pre->next;
-        pre->next = tmp_p;
+        p2 = *p1;
+        *p1 = (*p1)->next;
+        delete p2;
         return head;
     }
 };
