@@ -35,7 +35,7 @@ public:
                     p_result = p_tail;
                 }
                 p_tail_next = p_tail->next;
-                reverseList(p_head, p_tail);
+                reverseList(p_head, p_tail, k);
                 pre_head = p_head;
                 p_head = p_tail_next;
             } else if (p_tail == NULL) {
@@ -50,13 +50,18 @@ public:
         return p_result;
     }
 
-    ListNode* reverseList(ListNode* head, ListNode* tail) {
-        if (head == tail) {
-            return head;
+    ListNode* reverseList(ListNode* head, ListNode* tail, int count) {
+        if (head == NULL) {
+            return NULL;
         }
-        ListNode *p_reverse_end = reverseList(head->next, tail);
-        p_reverse_end->next = head;
-        return head;
+        ListNode* new_head = head;
+        while (count-- > 1) {
+            new_head = head->next;
+            head->next = tail->next;
+            tail->next = head;
+            head = new_head;
+        }
+        return new_head;
     }
 };
 
@@ -75,7 +80,7 @@ For k = 3, you should return: 3->2->1->4->5*/
     }
 
     Solution s;
-    ListNode *new_head = s.reverseKGroup(head->next, 3);
+    ListNode *new_head = s.reverseKGroup(head->next, 2);
     delete head;
     p = new_head;
 
