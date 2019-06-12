@@ -5,29 +5,16 @@ using namespace std;
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
-        if (nums.size() == 0) {
-            return 0;
-        }
-        int right_index = nums.size() - 1;
+        int right_index = nums.size();
         int left_index = 0;
         while (left_index < right_index) {
-            while (right_index > left_index && nums[right_index] == val) {
-                --right_index;
-            }
-            if (left_index < right_index) {
-                if (nums[left_index] == val) {
-                    nums[left_index] = nums[right_index--];
-                } else {
-                    ++left_index;
-                }
+            if (nums[left_index] != val) {
+                ++left_index;
+            } else {
+                nums[left_index] = nums[--right_index];
             }
         }
-
-        if (nums[left_index] == val) {
-            return left_index;
-        } else {
-            return left_index + 1;
-        }
+        return right_index;
     }
 };
 
