@@ -6,36 +6,17 @@ using namespace std;
 class Solution {
 public:
     int strStr(string haystack, string needle) {
-        size_t haystack_index = 0;
-        size_t needle_index = 0;
-        int result = -1;
-        if (needle.size() == 0) {
-            return 0;
-        }
-
-        while (haystack_index < haystack.size()) {
-                if (haystack[haystack_index] == needle[0]) {
-                     int i = haystack_index, j = 0;
-                     while (i < haystack.size() && j < needle.size()) {
-                         if (haystack[i] == needle[j]) {
-                             ++i;
-                             ++j;
-                         } else {
-                             break;
-                         }
-                     }
-                     if (j == needle.size()) {
-                         result = haystack_index;
-                         break;
-                     } else if (i == haystack.size()) {
-                         result = -1;
-                         break;
-                     }
+        for (int i = 0; ; ++i) {
+            for (int j = 0; ; ++j) {
+                if(j == needle.size()) {
+                    return i;
+                } else if (i + j == haystack.size()) {
+                    return -1;
+                } else if (needle[j] != haystack[i + j]) {
+                    break;
                 }
-                ++haystack_index;
+            }
         }
-
-        return result;
     }
 };
 
