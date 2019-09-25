@@ -1,0 +1,20 @@
+server {
+    gzip on;
+    gzip_types      text/plain application/xml;
+    gzip_proxied    no-cache no-store private expired auth;
+    gzip_min_length 1000;
+    gunzip on;
+
+    listen ${NGINX_PORT};
+    server_name ${NGINX_HOST};
+    root /www/data;
+
+    location / {
+       index index.htm index.html; 
+    }
+
+    location /static/ {
+        root /www/data;
+    }
+#    error_page 404 404.html;
+}

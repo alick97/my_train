@@ -1,0 +1,15 @@
+my_nginx:
+    container_name: my_nginx
+    image: nginx:1.17.4
+    volumes:
+        - ./workspace/conf.d/:/etc/nginx/conf.d/
+        - ./workspace/cache/:/var/cache/nginx/
+        - ./workspace/logs/:/var/log/nginx/
+        - ./workspace/data/:/www/data/
+        - /dd1
+    ports:
+        - "8080:80"
+    environment:
+        - NGINX_HOST=localhost
+        - NGINX_PORT=80
+    command: /bin/bash -c "sed -i 's@worker_processes  1;@worker_processes  4;@' /etc/nginx/nginx.conf && envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
