@@ -37,3 +37,8 @@ Debug
 
 #vscode
 .vscode
+
+# autotools file
+net/autoscan.log
+net/config.h
+**/autom4te.cache/**
