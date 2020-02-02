@@ -103,7 +103,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am__objects_1 = common/error.$(OBJEXT)
+am__objects_1 = common/error.$(OBJEXT) common/wrapsocket.$(OBJEXT)
 am_daytime_client_OBJECTS = chapter_1/daytime_client.$(OBJEXT) \
 	$(am__objects_1)
 daytime_client_OBJECTS = $(am_daytime_client_OBJECTS)
@@ -277,7 +277,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/common
-COMMON_SOURCES = common/error.c common/error.h common/addrinfo.h common/unp.h
+COMMON_SOURCES = common/error.c common/addrinfo.h common/unp.h \
+    common/wrapsocket.c common/wrapsocket.h
+
 daytime_client_SOURCES = chapter_1/daytime_client.c $(COMMON_SOURCES)
 daytime_server_SOURCES = chapter_1/daytime_server.c $(COMMON_SOURCES)
 all: config.h
@@ -391,6 +393,8 @@ common/$(DEPDIR)/$(am__dirstamp):
 	@: > common/$(DEPDIR)/$(am__dirstamp)
 common/error.$(OBJEXT): common/$(am__dirstamp) \
 	common/$(DEPDIR)/$(am__dirstamp)
+common/wrapsocket.$(OBJEXT): common/$(am__dirstamp) \
+	common/$(DEPDIR)/$(am__dirstamp)
 
 daytime_client$(EXEEXT): $(daytime_client_OBJECTS) $(daytime_client_DEPENDENCIES) $(EXTRA_daytime_client_DEPENDENCIES) 
 	@rm -f daytime_client$(EXEEXT)
@@ -413,6 +417,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@chapter_1/$(DEPDIR)/daytime_client.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@chapter_1/$(DEPDIR)/daytime_server.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@common/$(DEPDIR)/error.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@common/$(DEPDIR)/wrapsocket.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
