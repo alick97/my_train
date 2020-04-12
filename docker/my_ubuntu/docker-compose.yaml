@@ -10,6 +10,7 @@ services:
                 - USER_NAME=alick
                 - USER_GROUP=alick
                 - USER_PASSWORD=1
+                - UBUNTU_VERSION=18.04
 
         image: my_ubuntu:v1
         volumes:
