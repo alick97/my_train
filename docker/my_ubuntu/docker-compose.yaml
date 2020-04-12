@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+    my_ubuntu_work:
+        container_name: my_ubuntu_work
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                - USER_NAME=alick
+                - USER_GROUP=alick
+                - USER_PASSWORD=1
+
+        image: my_ubuntu:v1
+        volumes:
+            - my_ubuntu_workspace_data_volume:/home/alick
+        ports:
+            - "8022:22"
+        network_mode: "bridge"
+volumes:
+    my_ubuntu_workspace_data_volume:
+
+
