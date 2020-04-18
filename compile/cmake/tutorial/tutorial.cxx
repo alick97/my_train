@@ -11,8 +11,9 @@
 
 int main(int argc, const char* argv[]) {
     if (argc < 2) {
+        std::cout << "Usage: " << argv[0] << " number" << std::endl;
         // report version.
-        std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
+        std::cout << "Version: " << Tutorial_VERSION_MAJOR << "."
                   << Tutorial_VERSION_MINOR << std::endl;
         return 1;
     }
@@ -22,6 +23,6 @@ int main(int argc, const char* argv[]) {
 #else
     const double outputValue = sqrt(inputValue);
 #endif
-    std::cout << "result: " << outputValue << std::endl;
+    std::cout << argv[1] << " is " << outputValue << std::endl;
     return 0;
 }

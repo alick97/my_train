@@ -18,7 +18,6 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 if(USE_MYMATH)
   add_subdirectory(MathFunctions)
   list(APPEND EXTRA_LIBS MathFunctions)
-  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif()
 
 # add the executable.
@@ -29,5 +28,31 @@ target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
 # add the binary tree to the search path for include files,
 # so that we will find TutorialConfig.h
 target_include_directories(Tutorial PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           "${EXTRA_INCLUDES}")
+                           "${PROJECT_BINARY_DIR}")
+
+install(TARGETS Tutorial DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
+    DESTINATION include)
+
+enable_testing()
+
+# does the application run.
+add_test(NAME Usage COMMAND Tutorial)
+set_tests_properties(Usage
+    PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number")
+
+# define a function to simplify add tests.
+function(do_test target arg result)
+    add_test(NAME Comp${arg} COMMAND ${target} ${arg})
+    set_tests_properties(Comp${arg}
+    PROPERTIES PASS_REGULAR_EXPRESSION ${result})
+endfunction(do_test)
+
+# do a bunch of result based tests
+do_test(Tutorial 4 "4 is 2")
+do_test(Tutorial 9 "9 is 3")
+do_test(Tutorial 5 "5 is 2.236")
+do_test(Tutorial 7 "7 is 2.645")
+do_test(Tutorial 25 "25 is 5")
+do_test(Tutorial -25 "-25 is [-nan|nan|0]")
+do_test(Tutorial 0.0001 "0.0001 is 0.01")
