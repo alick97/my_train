@@ -34,6 +34,11 @@ install(TARGETS Tutorial DESTINATION bin)
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
     DESTINATION include)
 
+include(CheckSymbolExists)
+set(CMAKE_REQUIRED_LIBRARIES "m")
+check_symbol_exists(log "math.h" HAVE_LOG)
+check_symbol_exists(exp "math.h" HAVE_EXP)
+
 enable_testing()
 
 # does the application run.
