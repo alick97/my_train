@@ -1,19 +1,35 @@
 #include "MathFunctions.h"
+#include "Table.h"
 
 double mysqrt(double x) {
-    double val = x;
+    double result = x;
     double last;
 
-#if defined(HAVE_LOG) && defined(HAVE_EXP)
-    val = exp(log(x) * 0.5);
-    std::cout << "Computing sqrt of " << x << " to be " << val
-              << " using log and exp" << std::endl;
-#else
-    do {
-        last = val;
-        val = (val + x/val) / 2;
-    } while(abs(val - last) > E);
-#endif
+    if (x <= 0) {
+        return 0;
+    }
 
-    return val;
+    // use the table to help find an initial value.
+    if (x >= 1 && x < 10) {
+        std::cout << "Use the table to help find an initial value " << std::endl;
+        result = sqrtTable[static_cast<int>(x)];
+    }
+    
+    // do ten iterations.
+    for (int i = 0; i < 10; ++i) {
+        if (result <= 0) {
+            result = 0.1;
+        }
+        // f(t) = t * t
+        // f'(t) = 2t
+        // f(result) - f(result0) = f'(result0)(result - result0)
+        //                        = 2 * result0 * (result - result0)
+        // delta = f(t) - f(result0) ---> x - (result0 * result0)
+        // result = result0 + delta / 2 / result0
+        double delta = x - (result * result);
+        result = result + 0.5 * delta / result;
+    }
+    std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
+
+    return result;
 }
