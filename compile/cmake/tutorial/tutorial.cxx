@@ -1,10 +1,5 @@
 #include "TutorialConfig.h"
-#ifdef USE_MYMATH
-#  include "MathFunctions.h"
-#else
-#  include <cmath>
-#endif
-
+#include "MathFunctions.h"
 #include <iostream>
 
 int main(int argc, const char* argv[]) {
@@ -16,11 +11,7 @@ int main(int argc, const char* argv[]) {
         return 1;
     }
     const double inputValue = std::stod(argv[1]);
-#ifdef USE_MYMATH
-    const double outputValue = mysqrt(inputValue);
-#else
-    const double outputValue = sqrt(inputValue);
-#endif
+    const double outputValue =  mathfunctions::sqrt(inputValue);
     std::cout << argv[1] << " is " << outputValue << std::endl;
     return 0;
 }

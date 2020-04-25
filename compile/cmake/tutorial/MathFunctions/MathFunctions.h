@@ -1,7 +1,18 @@
 #ifndef __MATHFUNCTIONS__H__
 #define __MATHFUNCTIONS__H__
-#include <iostream>
 
-double mysqrt(double value);
+#if defined(_WIN32)
+#  if defined(EXPORTING_MYMATH)
+#    define DECLSPEC __declspec(dllexport)
+#  else
+#    define DECLSPEC __declspec(dllimport)
+#  endif
+#else // non windows
+#  define DECLSPEC
+#endif
+
+namespace mathfunctions {
+double DECLSPEC sqrt(double value);
+}
 
 #endif

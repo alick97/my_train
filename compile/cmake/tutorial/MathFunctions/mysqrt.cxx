@@ -1,6 +1,11 @@
-#include "MathFunctions.h"
+#include <iostream>
+#include "mysqrt.h"
 #include "Table.h"
 
+
+namespace mathfunctions {
+namespace detail {
+// a hack square root calculation using simple operations
 double mysqrt(double x) {
     double result = x;
     double last;
@@ -32,4 +37,6 @@ double mysqrt(double x) {
     std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
 
     return result;
+}
+}
 }
