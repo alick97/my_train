@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-    my_ubuntu_work:
-        container_name: my_ubuntu_work
+    my_zulip_dev:
+        container_name: my_zulip_dev
         build:
             context: .
             dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
                 - USER_PASSWORD=1
                 - UBUNTU_VERSION=18.04
 
-        image: my_ubuntu:v1
+        image: my_ubuntu_zulip:v1
         volumes:
             - data_volume:/home/alick
         ports:
