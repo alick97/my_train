@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.17)
 # set the project name.
 project(Tutorial VERSION 1.0)
 
+set(CMAKE_DEBUG_POSTFIX debug)
+
 # specify the C++ standard.
 add_library(tutorial_compiler_flags INTERFACE)
 target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_11)
@@ -32,6 +34,7 @@ add_subdirectory(MathFunctions)
 
 # add the executable.
 add_executable(Tutorial tutorial.cxx)
+set_target_properties(Tutorial PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 
 target_link_libraries(Tutorial PUBLIC MathFunctions)
 
