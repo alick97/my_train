@@ -1,3 +1,22 @@
-// the configured options and setting for Tutorial.
+// the configured options and setting for net tutorial.
+#ifndef __NET_TUTORIAL_CONFIG_H__
+#define __NET_TUTORIAL_CONFIG_H__
 #define NetTutorial_VERSION_MAJOR @NetTutorial_VERSION_MAJOR@
 #define NetTutorial_VERSION_MINOR @NetTutorial_VERSION_MINOR@
+
+// HEAD file.
+#cmakedefine HAVE_SYS_SELECT_H 
+#cmakedefine HAVE_SYS_SELECT_H
+#cmakedefine HAVE_POLL_H
+#cmakedefine HAVE_STRINGS_H
+#cmakedefine HAVE_SYS_IOCTL_H
+#cmakedefine HAVE_SYS_FILIO_H
+#cmakedefine HAVE_SYS_SOCKIO_H
+#cmakedefine HAVE_PTHREAD_H
+
+// Function.
+#cmakedefine HAVE_BZERO
+#cmakedefine HAVE_GETHOSTBYNAME2
+
+
+#endif  /* defined(__NET_TUTORIAL_CONFIG_H__) */
