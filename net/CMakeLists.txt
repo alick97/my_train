@@ -34,3 +34,4 @@ configure_file(config.h.in config.h)
 
 add_subdirectory(common)
 add_subdirectory(chapter_1)
+add_subdirectory(intro)
