@@ -154,4 +154,23 @@ typedef void Sigfunc(int);
 // };
 // #endif
 
+/* prototypes for our own library functions */
+int sock_bind_wild(int sockfd, int family);
+
+/* wrap fun */
+int Sock_bind_wild(int sockfd, int family);
+
+int Socket(int family, int type, int protocol);
+int Bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+int Listen(int sockfd, int backlog);
+int Accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+ssize_t Write(int fildes, const void *buf, size_t nbyte);
+int Close(int fd);
+
+void err_ret(const char *fmt, ...);
+void err_sys(const char *fmt, ...);
+void err_dump(const char *fmt, ...);
+void err_msg(const char *fmt, ...);
+void err_quit(const char *fmt, ...);
+
 #endif

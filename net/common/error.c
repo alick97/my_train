@@ -1,4 +1,6 @@
-#include "error.h"
+#include "unp.h"
+#include <stdarg.h>
+#include <syslog.h>
 
 int daemon_proc; /* set nonzero by daemon_init() */
 
