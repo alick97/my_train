@@ -156,6 +156,10 @@ typedef void Sigfunc(int);
 
 /* prototypes for our own library functions */
 int sock_bind_wild(int sockfd, int family);
+int sock_cmp_addr(const struct sockaddr *sa1, const struct sockaddr *sa2,
+	socklen_t salen);
+int sock_cmp_port(const struct sockaddr *sa1, const struct sockaddr *sa2,
+	              socklen_t salen);
 
 /* wrap fun */
 int Sock_bind_wild(int sockfd, int family);

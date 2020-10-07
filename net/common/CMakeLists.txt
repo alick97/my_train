@@ -1,7 +1,9 @@
 add_library(tutorial_common
             error.c
             wrapsocket.c
-            sock_bind_wild.c)
+            sock_bind_wild.c
+            sock_cmp_addr.c
+            sock_cmp_port.c)
 set_property(TARGET tutorial_common PROPERTY VERSION "1.0.0")
 set_property(TARGET tutorial_common PROPERTY SOVERSION "1")
 
