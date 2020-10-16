@@ -160,6 +160,10 @@ int sock_cmp_addr(const struct sockaddr *sa1, const struct sockaddr *sa2,
 	socklen_t salen);
 int sock_cmp_port(const struct sockaddr *sa1, const struct sockaddr *sa2,
 	              socklen_t salen);
+/* Read n bytes from a descriptor. */
+ssize_t readn(int fd, void *vptr, size_t n);
+/* Write n butes to a descriptor. */
+ssize_t writen(int fd, const void * vptr, size_t n);
 
 /* wrap fun */
 int Sock_bind_wild(int sockfd, int family);
