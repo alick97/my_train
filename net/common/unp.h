@@ -162,8 +162,16 @@ int sock_cmp_port(const struct sockaddr *sa1, const struct sockaddr *sa2,
 	              socklen_t salen);
 /* Read n bytes from a descriptor. */
 ssize_t readn(int fd, void *vptr, size_t n);
-/* Write n butes to a descriptor. */
+/* Write n bytes to a descriptor. */
 ssize_t writen(int fd, const void * vptr, size_t n);
+/* Read line from fd, if more than maxlen return maxlen. vptr result with '\n'
+   this function is slow, it read one by one byte from fd use syscall read.
+*/
+ssize_t readline1(int fd, void *vptr, size_t maxlen);
+/* Read line from fd, if more than maxlen return maxlen. vptr result with '\n'
+   this function is fast but not thread safe, it read one by one byte from fd use
+   myread which use static data buff not thread safe. */
+ssize_t readline(int fd, void *vptr, size_t maxlen);
 
 /* wrap fun */
 int Sock_bind_wild(int sockfd, int family);
@@ -174,6 +182,7 @@ int Listen(int sockfd, int backlog);
 int Accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 ssize_t Write(int fildes, const void *buf, size_t nbyte);
 int Close(int fd);
+ssize_t Readline(int fd, void *ptr, size_t maxlen);
 
 void err_ret(const char *fmt, ...);
 void err_sys(const char *fmt, ...);

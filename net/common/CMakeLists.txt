@@ -5,7 +5,9 @@ add_library(tutorial_common
             sock_cmp_addr.c
             sock_cmp_port.c
             readn.c
-            writen.c)
+            writen.c
+            readline1.c
+            readline.c)
 set_property(TARGET tutorial_common PROPERTY VERSION "1.0.0")
 set_property(TARGET tutorial_common PROPERTY SOVERSION "1")
 
