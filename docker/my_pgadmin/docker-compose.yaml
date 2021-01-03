@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  my_pgadmin:
+    container_name: my_pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=alick97@outlook.com
+      - PGADMIN_DEFAULT_PASSWORD=111111
+    ports:
+      - "1080:80"
