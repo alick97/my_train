@@ -5,17 +5,22 @@ FROM ubuntu:$UBUNTU_VERSION
 
 ARG USER_NAME=alick
 ARG USER_PASSWORD=1
+ARG UBUNTU_MIRROR=""
 
 LABEL version='1.0'
 MAINTAINER alick97
 # apt update and install package
-RUN apt-get update && apt-get install -y \
-build-essential \
-python3 \
-ssh \
-vim \
-git \
-sudo
+RUN echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections \
+    && echo locales locales/locales_to_be_generated select "en_US.UTF-8 UTF-8" | debconf-set-selections \
+    && { sed -i "s|http://\(\w*\.\)*ubuntu\.com/ubuntu/\? |$UBUNTU_MIRROR |" /etc/apt/sources.list; } \
+    && apt-get update
+RUN apt-get install --no-install-recommends -y \
+    build-essential \
+    python3 \
+    ssh \
+    vim \
+    git \
+    sudo
 
 # add default user
 RUN /bin/bash -c "groupadd -r -g 1000 $USER_NAME;\
@@ -30,5 +35,4 @@ RUN mkdir /run/sshd
 # WORKDIR /home/${USER_NAME}
 
 EXPOSE 22/tcp
-CMD ["/usr/sbin/sshd", "-D"]
-
+ENTRYPOINT ["/usr/sbin/sshd", "-D"]
