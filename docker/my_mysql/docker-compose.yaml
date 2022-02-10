@@ -5,19 +5,22 @@ services:
 
   db:
     container_name: my_mysql
-    image: mysql
+    image: mysql:8.0.28
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
+#    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
       - 127.0.0.1:3306:3306
+    volumes:
+      - data_volume:/var/lib/mysql
 
-#   adminer:
-#     image: adminer
-#     restart: always
-#     ports:
-#       - 127.0.0.1:8082:8080
+volumes:
+  data_volume:
+    external:
+      name: my_mysql_data_volume
+
 networks:
   my_mysql_net:
     ipam:
