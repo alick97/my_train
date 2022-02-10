@@ -13,7 +13,7 @@ services:
                 - UBUNTU_VERSION=20.04
                 - UBUNTU_MIRROR=http://mirrors.163.com/ubuntu/
 
-        image: my_ubuntu:v1
+        image: my_ubuntu:1.01
         volumes:
             - data_volume:/home/alick
         ports:
