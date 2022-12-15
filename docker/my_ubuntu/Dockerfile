@@ -7,7 +7,7 @@ ARG USER_NAME=alick
 ARG USER_PASSWORD=1
 ARG UBUNTU_MIRROR=""
 
-LABEL version='1.0'
+LABEL version='1.0.2'
 MAINTAINER alick97
 # apt update and install package
 RUN echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections \
@@ -34,6 +34,8 @@ RUN printf 'y\n\n' | unminimize \
 RUN apt-get install --no-install-recommends -y \
     vim \
     git \
+    tig \
+    less \
     tmux \
     && rm -rf /var/lib/apt/lists/*
 
