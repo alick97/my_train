@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  my-tdengine:
+    container_name: my-tdengine
+    image: tdengine/tdengine:3.0.2.5
+    volumes:
+      - ~/deploy/my-tdengine/log:/var/log/taos
+      - ~/deploy/my-tdengine/data:/var/lib/taos
+    ports:
+      - 127.0.0.1:46030:6030/tcp
+      - 127.0.0.1:46030:6030/udp
+
+
