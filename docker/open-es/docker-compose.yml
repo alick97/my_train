@@ -1,0 +1,15 @@
+version: "3.3"
+services:    
+  elasticsearch:
+    container_name: my-opensearch
+    image: opensearchproject/opensearch:2.5.0
+    volumes:
+      - ./data:/usr/share/opensearch/data
+    environment:
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+    ports:
+      - "49303:9300"
+      - "49203:9200"
