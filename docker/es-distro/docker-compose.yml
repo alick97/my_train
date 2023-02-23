@@ -1,0 +1,15 @@
+version: "3.3"
+services:    
+  elasticsearch:
+    container_name: my-es-distro
+    image: amazon/opendistro-for-elasticsearch:1.13.2
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+      - opendistro_security.disabled=true
+    ports:
+      - "49304:9300"
+      - "49204:9200"

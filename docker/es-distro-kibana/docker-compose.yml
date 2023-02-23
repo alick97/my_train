@@ -1,0 +1,11 @@
+version: '3'
+services:
+  kibana:
+    image: amazon/opendistro-for-elasticsearch-kibana:1.13.2
+    container_name: es-distro-kibana
+    ports:
+      - 45601:5601
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    environment:
+      - opendistro_secutiry.disabled=true
