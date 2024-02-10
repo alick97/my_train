@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+    my-frp-client:
+        container_name: my-frp-client
+        image: snowdreamtech/frpc:0.44.0
+        volumes:
+            - ./frpc.ini:/etc/frp/frpc.ini
+        network_mode: "host"
