@@ -1,0 +1,12 @@
+[Unit]
+Description=My Custom Script Service
+After=network.target
+
+[Service]
+Type=forking
+# Type=simple
+ExecStart=/home/alick/workspace/test/systemd.t/test-nooo.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
